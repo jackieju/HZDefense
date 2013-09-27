@@ -10,6 +10,7 @@ private	var count: int = 0;
 
 
  var font:Font;
+ var big_font: Font;
 
 function removeAllLines(){
 var i:int;
@@ -134,9 +135,15 @@ function OnGUI(){
 		var f = GUI.skin.label.font ;
 		GUI.skin.label.font = font;
 		
-	if (GUI.Button(new Rect(0, 0, 112, 66), "clear多哈", style)){
+	if (GUI.Button(new Rect(0, 0, 112, 66), "--s清除s--", style)){
 		removeAllLines();	
 	}
+	
+	var big_font_style : GUIStyle = new GUIStyle();
+	big_font_style.font = big_font;
+	big_font_style.normal.textColor = Color.yellow;
+	GUI.Button(new Rect(50, 50, 300, 500), "尊", big_font_style);
+		
 //		 if (GUI.Button(CentralController.HDRect(100, 210, 112, 66), "", blankStyle)){
 //	 	Application.LoadLevel("main");
 //	 	
